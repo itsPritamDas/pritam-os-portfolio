@@ -24,20 +24,6 @@ A unique desktop-like portfolio experience designed to showcase my journey, proj
 
 ---
 
-## 🎬 Preview
-
-<div align="center">
-
-<!-- Add your portfolio demonstration GIF at assets/pritam-os-demo.gif -->
-
-<img src="assets/pritam-os-demo.gif" width="90%" alt="Pritam OS Interactive Portfolio Demo" />
-
-*An interactive desktop experience for exploring my developer profile.*
-
-</div>
-
----
-
 ## ✨ Overview
 
 **Pritam OS** reimagines the traditional developer portfolio as an interactive desktop environment inspired by Windows 11.

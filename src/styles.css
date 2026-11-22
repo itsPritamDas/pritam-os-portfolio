@@ -345,7 +345,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
   .app-window { min-width: 300px; }
   .page-content { padding: 23px; }
 }
-@media (max-width: 640px) {
+@media (max-width: 640px), (pointer: coarse) and (hover: none) and (max-device-width: 600px) {
   .power-screen, .boot-screen { min-height: 100dvh; }
   .power-topline { padding: 22px 20px; }
   .topline-meta { display: none; }
@@ -863,7 +863,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
   .page-content { padding: 24px 25px 30px; }
   .certificate-info h3 { font-size: 14px; }
 }
-@media (max-width: 640px) {
+@media (max-width: 640px), (pointer: coarse) and (hover: none) and (max-device-width: 600px) {
   .power-screen, .boot-screen { min-height: 100dvh; }
   .power-topline { padding: 18px 20px; }
   .power-center { padding: 76px 20px 88px; }
@@ -973,3 +973,52 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
 .system-shell:not(.theme-light) .power-popover button { color: #e6edf5; }
 .system-shell:not(.theme-light) .power-popover { border-color: #45566a; background: #26394d; }
 .system-shell:not(.theme-light) .power-popover button:hover { background: #3a5066; }
+
+
+/* Mobile viewport and intro-video safeguards. These rules also apply to
+   touch smartphones when the browser requests a desktop-style viewport. */
+@media (max-width: 640px), (pointer: coarse) and (hover: none) and (max-device-width: 600px) {
+  html, body, #root {
+    min-height: 100%;
+  }
+
+  .system-shell {
+    height: 100vh;
+    height: 100dvh;
+    min-height: 100svh;
+  }
+
+  .power-screen,
+  .boot-screen,
+  .desktop-wallpaper {
+    height: 100vh;
+    height: 100dvh;
+    min-height: 100svh;
+  }
+
+  .boot-background-video {
+    object-position: center;
+  }
+
+  .desktop-icon-grid {
+    top: 185px;
+    grid-template-columns: repeat(3, 76px);
+    grid-auto-rows: 78px;
+    gap: 1px 3px;
+  }
+
+  .window-content {
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 640px) and (orientation: portrait),
+       (pointer: coarse) and (hover: none) and (max-device-width: 600px) and (orientation: portrait) {
+  /* Show the complete 16:9 intro clip on tall phone screens instead of
+     cropping its sides with object-fit: cover. */
+  .boot-background-video {
+    object-fit: contain;
+    background: #061d3c;
+  }
+}

@@ -54,6 +54,7 @@ function AppIcon({ id, size = 19 }: { id: AppId; size?: number }) {
 function App() {
   const [system, setSystem] = useState<SystemState>('power');
   const [bootProgress, setBootProgress] = useState(0);
+  const [bootVideoStarted, setBootVideoStarted] = useState(false);
   const [openWindows, setOpenWindows] = useState<AppId[]>([]);
   const [windows, setWindows] = useState<Record<AppId, WindowState>>(() => {
     const result = {} as Record<AppId, WindowState>;
@@ -81,8 +82,17 @@ function App() {
     return () => window.clearInterval(timer);
   }, []);
 
+  // Give mobile browsers a moment to load the intro video before starting
+  // the five-second boot countdown. If autoplay/media loading is unavailable,
+  // the fallback keeps the boot sequence from getting stuck.
   useEffect(() => {
     if (system !== 'booting') return;
+    const fallback = window.setTimeout(() => setBootVideoStarted(true), 2500);
+    return () => window.clearTimeout(fallback);
+  }, [system]);
+
+  useEffect(() => {
+    if (system !== 'booting' || !bootVideoStarted) return;
     setBootProgress(0);
     const started = Date.now();
     const timer = window.setInterval(() => {
@@ -90,12 +100,13 @@ function App() {
       setBootProgress(progress);
       if (progress >= 100) {
         window.clearInterval(timer);
+        bootTimer.current = null;
         setSystem('desktop');
       }
     }, 35);
     bootTimer.current = timer;
     return () => window.clearInterval(timer);
-  }, [system]);
+  }, [system, bootVideoStarted]);
 
   useEffect(() => {
     const onPointerMove = (event: globalThis.PointerEvent) => {
@@ -120,6 +131,7 @@ function App() {
   }, []);
 
   const beginBoot = useCallback(() => {
+    setBootVideoStarted(false);
     setStartOpen(false);
     setPowerMenu(false);
     setConfirmShutdown(false);
@@ -231,6 +243,8 @@ function App() {
                 muted
                 playsInline
                 preload="auto"
+                onPlaying={() => setBootVideoStarted(true)}
+                onError={() => setBootVideoStarted(true)}
                 aria-hidden="true"
                 tabIndex={-1}
               >

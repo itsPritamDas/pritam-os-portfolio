@@ -260,7 +260,7 @@ function App() {
             <motion.section key="desktop" className={backgroundClass} initial={{ opacity: 0, scale: 1.02 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.55 }}>
               <div className="desktop-glow glow-a" /><div className="desktop-glow glow-b" />
               <div className="desktop-topbar"><div className="desktop-signature"><span className="mini-os-mark"><i /><i /><i /><i /></span><span>PRITAM <b>OS</b></span></div><div className="topbar-center">A DEVELOPER'S DIGITAL WORKSPACE</div><div className="topbar-right"><span className="online-dot" /> AVAILABLE FOR OPPORTUNITIES</div></div>
-              <div className="desktop-welcome"><span className="welcome-kicker">WELCOME TO MY WORKSPACE</span><h2>Hi, I’m <em>Pritam...</em></h2><p>Final Year B.Tech CSE student@JIS UNUVERSITY · Full Stack Developer · AI Enthusiast<p>Aspiring Software Engineer</p> </p><div className="welcome-chips"><span><Code2 size={12}/> BUILD</span><span><Sparkles size={12}/> EXPLORE</span><span><ShieldCheck size={12}/> SECURE</span></div></div>
+              <div className="desktop-welcome"><span className="welcome-kicker">WELCOME TO MY WORKSPACE</span><h2>Hi, I’m <em>Pritam...</em></h2><p>Final Year B.Tech CSE student@JIS UNIVERSITY · Full Stack Developer · AI Enthusiast<p>Aspiring Software Engineer</p> </p><div className="welcome-chips"><span><Code2 size={12}/> BUILD</span><span><Sparkles size={12}/> EXPLORE</span><span><ShieldCheck size={12}/> SECURE</span></div></div>
               <div className="desktop-icon-grid" aria-label="Desktop applications">
                 {desktopApps.map((id) => (
                   <button key={id} className="desktop-icon" onDoubleClick={() => openApp(id)} onClick={() => openApp(id)}>

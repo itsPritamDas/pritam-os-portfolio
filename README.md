@@ -16,9 +16,8 @@ A unique desktop-like portfolio experience designed to showcase my journey, proj
 </p>
 
 <p>
-  <a href="YOUR_LIVE_WEBSITE_URL">🌐 Live Demo</a> •
-  <a href="YOUR_REPOSITORY_URL">📂 Repository</a> •
-  <a href="YOUR_RESUME_URL">📄 Resume</a>
+  <a href="https://pritam-os-portfolio.iampritamdas04.workers.dev/">🌐 Live Demo</a> •
+  <a href="https://github.com/itsPritamDas/pritam-os-portfolio">📂 Repository</a> •
 </p>
 
 </div>
@@ -134,7 +133,7 @@ npm run build
 
 Experience my portfolio through a Windows-inspired desktop interface.
 
-<a href="YOUR_LIVE_WEBSITE_URL">
+<a href="https://pritam-os-portfolio.iampritamdas04.workers.dev/">
   <img src="https://img.shields.io/badge/LAUNCH%20PRITAM%20OS-0078D4?style=for-the-badge&logo=windows11&logoColor=white" alt="Launch Pritam OS" />
 </a>
 

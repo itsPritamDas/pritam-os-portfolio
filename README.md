@@ -44,7 +44,6 @@ The interface combines modern frontend technologies with a clean visual design, 
 | ⚡ Skills & Experience | Dedicated sections for technical skills and experience |
 | 🎓 Education & Certificates | Academic background and certifications |
 | ⌨️ Interactive Terminal | Command-based portfolio exploration |
-| 📄 Resume Viewer | Preview and download my resume |
 | 🎨 Theme Support | Light and dark appearance |
 | 📱 Responsive Interface | Adaptable desktop, tablet, and mobile layouts |
 

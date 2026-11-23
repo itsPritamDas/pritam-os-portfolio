@@ -5,7 +5,6 @@
 - `src/components/Terminal.tsx` — interactive command terminal
 - `src/data/profile.ts` — editable profile, education, work, skills, projects and certificates
 - `src/styles.css` — Windows 11-inspired desktop, light app windows, readable typography, start menu, taskbar, startup, mobile and theme styling
-- `public/resume/Pritam_Das_Resume.pdf` — latest resume PDF found in the shared Library
 - `README.md` — installation, development and deployment instructions
 - `PROFILE_REVIEW_REQUIRED.md` — facts to verify before publishing
 - `start-windows.bat` — Windows start helper

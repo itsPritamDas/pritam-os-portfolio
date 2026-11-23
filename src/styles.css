@@ -97,7 +97,6 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
 .icon-experience, .pinned-icon.icon-experience { color: #83e5ce; }
 .icon-education, .pinned-icon.icon-education { color: #f0c88a; }
 .icon-terminal, .pinned-icon.icon-terminal { color: #8ce0a7; }
-.icon-resume, .pinned-icon.icon-resume { color: #f3a8b5; }
 .icon-contact, .pinned-icon.icon-contact { color: #a9d6ff; }
 .icon-certificates, .pinned-icon.icon-certificates { color: #f6d58b; }
 .desktop-side-note { position: absolute; right: 30px; bottom: 100px; display: flex; align-items: center; gap: 12px; color: rgba(169,202,231,.45); font: 8px/1.7 var(--mono); letter-spacing: .14em; text-align: right; pointer-events: none; }
@@ -277,14 +276,6 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
 .education-result span { padding: 4px 6px; border: 1px solid rgba(153,205,241,.12); border-radius: 5px; color: #9eb9d1; background: rgba(124,178,215,.05); font-size: 8px; }
 .education-disclaimer { margin-top: 20px; padding: 10px; border: 1px solid rgba(240,197,119,.16); border-radius: 7px; color: #bca77e; background: rgba(210,164,78,.055); font-size: 9px; line-height: 1.65; }
 .education-disclaimer code { color: #d7c18f; font-family: var(--mono); }
-.resume-viewer { display: flex; height: 100%; min-height: 300px; flex-direction: column; background: #091625; }
-.resume-toolbar { display: flex; min-height: 44px; align-items: center; justify-content: space-between; gap: 10px; padding: 0 14px; border-bottom: 1px solid rgba(184,217,248,.12); }
-.resume-toolbar div, .resume-toolbar a { display: inline-flex; align-items: center; gap: 8px; color: #b9cee3; font-size: 9px; }
-.resume-toolbar div svg { color: #91dff8; }
-.resume-toolbar a { padding: 7px 9px; border: 1px solid rgba(136,215,247,.2); border-radius: 7px; color: #8fdef8; background: rgba(78,175,216,.08); text-decoration: none; }
-.resume-viewer iframe { width: 100%; min-height: 420px; flex: 1; border: 0; background: #fff; }
-.resume-fallback { padding: 9px; color: #91a7bd; font-size: 9px; text-align: center; }
-.resume-fallback a { color: #8bdcf7; }
 .contact-page .content-heading { margin-bottom: 28px; }
 .contact-card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
 .contact-card { position: relative; display: flex; min-height: 135px; flex-direction: column; align-items: flex-start; padding: 15px; border: 1px solid rgba(151,203,240,.13); border-radius: 10px; background: linear-gradient(140deg, rgba(51,91,121,.22), rgba(18,35,55,.35)); text-decoration: none; transition: transform .16s, border-color .16s; }
@@ -414,9 +405,6 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
   .contact-bottom { flex-direction: column; }
   .certificate-row { align-items: flex-start; }
   .certificate-result { display: none; }
-  .resume-toolbar { padding: 0 9px; }
-  .resume-toolbar div, .resume-toolbar a { font-size: 8px; }
-  .resume-viewer iframe { min-height: 300px; }
   .desktop-break { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -558,7 +546,6 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
 .icon-experience { color: #13866d; }
 .icon-education { color: #8056aa; }
 .icon-terminal { color: #354a62; }
-.icon-resume { color: #c04b55; }
 .icon-contact { color: #2478ba; }
 .icon-certificates { color: #b78319; }
 .desktop-side-note { display: none; }
@@ -803,14 +790,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
 }
 .certificate-footnote { margin-top: 16px; padding: 12px; border: 1px solid #eadfbd; border-radius: 5px; color: #705b2d; background: #fffaf0; font-size: 12px; line-height: 1.65; }
 
-/* Resume and contacts */
-.resume-viewer { background: #eef1f4; }
-.resume-toolbar { min-height: 48px; padding: 0 16px; border-bottom: 1px solid #dfe4e9; background: #f7f9fb; }
-.resume-toolbar div, .resume-toolbar a { color: #34495c; font-size: 13px; }
-.resume-toolbar div svg { color: #276f9f; }
-.resume-toolbar a { padding: 7px 11px; border: 1px solid #cad8e5; border-radius: 5px; color: #1c6296; background: #fff; }
-.resume-fallback { padding: 10px; color: #596979; background: #f7f9fb; font-size: 12px; }
-.resume-fallback a { color: #1769aa; }
+/* Contacts */
 .contact-page .content-heading { margin-bottom: 22px; }
 .contact-card-grid { gap: 13px; }
 .contact-card {
@@ -938,9 +918,6 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
   .certificate-info h3 { font-size: 13px; }
   .certificate-info p { font-size: 12px; }
   .certificate-result { display: block; max-width: none; margin-left: 44px; font-size: 11px; text-align: left; }
-  .resume-toolbar { padding: 0 9px; }
-  .resume-toolbar div, .resume-toolbar a { font-size: 11px; }
-  .resume-viewer iframe { min-height: 300px; }
   .desktop-break { display: none; }
 }
 

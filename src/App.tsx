@@ -5,7 +5,7 @@ import {
 import { AnimatePresence, motion, MotionConfig } from 'motion/react';
 import {
   AppWindow, Award, BookOpen, BriefcaseBusiness, Check, ChevronRight,
-  Code2, Command, Contact, Cpu, Download, ExternalLink, FileText,
+  Code2, Command, Contact, Cpu, ExternalLink,
   FolderKanban, Github, GraduationCap, HardDrive, Linkedin, Mail,
   Maximize2, Monitor, Moon, Power, Search, Settings2, ShieldCheck,
   Sparkles, Terminal as TerminalIcon, UserRound, Wifi, X, Sun, Clock3,
@@ -21,13 +21,12 @@ const appMeta: Record<AppId, { title: string; description: string; icon: typeof 
   experience: { title: 'Experience', description: 'Work and leadership', icon: BriefcaseBusiness },
   education: { title: 'Education', description: 'Academic journey', icon: GraduationCap },
   terminal: { title: 'Developer Terminal', description: 'Explore with commands', icon: TerminalIcon },
-  resume: { title: 'Resume.pdf', description: 'Preview my resume', icon: FileText },
   contact: { title: 'Contact', description: 'Let’s connect', icon: Contact },
   certificates: { title: 'Certificates', description: 'Learning and credentials', icon: Award },
 };
 
-const desktopApps: AppId[] = ['about', 'projects', 'skills', 'experience', 'education', 'terminal', 'resume', 'contact'];
-const pinnedApps: AppId[] = ['about', 'projects', 'skills', 'experience', 'education', 'terminal', 'resume', 'certificates', 'contact'];
+const desktopApps: AppId[] = ['about', 'projects', 'skills', 'experience', 'education', 'terminal', 'contact'];
+const pinnedApps: AppId[] = ['about', 'projects', 'skills', 'experience', 'education', 'terminal', 'certificates', 'contact'];
 const initialPositions: Record<AppId, { x: number; y: number; width: number; height: number }> = {
   about: { x: 160, y: 78, width: 760, height: 570 },
   projects: { x: 210, y: 70, width: 860, height: 620 },
@@ -35,7 +34,6 @@ const initialPositions: Record<AppId, { x: number; y: number; width: number; hei
   experience: { x: 190, y: 92, width: 800, height: 600 },
   education: { x: 240, y: 105, width: 740, height: 560 },
   terminal: { x: 180, y: 130, width: 760, height: 480 },
-  resume: { x: 220, y: 55, width: 850, height: 650 },
   contact: { x: 280, y: 135, width: 650, height: 510 },
   certificates: { x: 200, y: 80, width: 800, height: 600 },
 };
@@ -207,7 +205,6 @@ function App() {
       case 'experience': return <ExperienceContent />;
       case 'education': return <EducationContent />;
       case 'terminal': return <Terminal />;
-      case 'resume': return <ResumeContent />;
       case 'contact': return <ContactContent />;
       case 'certificates': return <CertificatesContent />;
     }
@@ -310,7 +307,7 @@ function App() {
                       {filteredApps.map((id) => <button key={id} className="pinned-app" onClick={() => openApp(id)}><span className={`pinned-icon icon-${id}`}><AppIcon id={id}/></span><span>{appMeta[id].title}</span></button>)}
                       {filteredApps.length === 0 && <p className="empty-search">No matching apps. Try “projects” or “skills”.</p>}
                     </div>
-                    <div className="start-recommended"><div className="start-section-heading"><span>RECOMMENDED</span><button onClick={() => openApp('projects')}>See all <ChevronRight size={12}/></button></div><button className="recommended-project" onClick={() => openApp('projects')}><span className="recommend-icon"><Cpu size={17}/></span><span><b>Early Warning System</b><small>Featured project · AI / Research</small></span><ChevronRight size={14}/></button><button className="recommended-project" onClick={() => openApp('resume')}><span className="recommend-icon"><FileText size={17}/></span><span><b>Pritam_Das_Resume.pdf</b><small>Personal document · PDF</small></span><ChevronRight size={14}/></button></div>
+                    <div className="start-recommended"><div className="start-section-heading"><span>RECOMMENDED</span><button onClick={() => openApp('projects')}>See all <ChevronRight size={12}/></button></div><button className="recommended-project" onClick={() => openApp('projects')}><span className="recommend-icon"><Cpu size={17}/></span><span><b>Early Warning System</b><small>Featured project · AI / Research</small></span><ChevronRight size={14}/></button></div>
                     <div className="start-footer"><div className="start-user"><div className="user-avatar">PD</div><span><b>Pritam Das</b><small>Developer workspace</small></span></div><div className="start-power-wrap"><button className="start-power" onClick={() => setPowerMenu((value) => !value)} aria-label="Power options"><Power size={17}/></button>{powerMenu && <div className="power-popover"><button onClick={() => setConfirmShutdown(true)}><Power size={15}/> Shut down</button><button onClick={beginBoot}><Settings2 size={15}/> Restart</button><button onClick={() => { setLightMode((value) => !value); setPowerMenu(false); }}>{lightMode ? <Moon size={15}/> : <Sun size={15}/>} {lightMode ? 'Dark theme' : 'Light theme'}</button><button onClick={() => { setWallpaper((value) => (value + 1) % 3); setPowerMenu(false); }}><Monitor size={15}/> Next wallpaper</button></div>}</div></div>
                   </motion.div>
                 )}
@@ -321,7 +318,7 @@ function App() {
                 <div className="taskbar-center">
                   <button className={`taskbar-start${startOpen ? ' active' : ''}`} onClick={() => { setStartOpen((value) => !value); setPowerMenu(false); }} aria-label="Open Start menu"><span className="mini-os-mark"><i/><i/><i/><i/></span></button>
                   <button className="taskbar-search" onClick={() => { setStartOpen(true); setSearch(''); }}><Search size={15}/><span>Search</span></button>
-                  {(['about', 'projects', 'terminal', 'resume'] as AppId[]).map((id) => <button key={id} className={`taskbar-app${openWindows.includes(id) ? ' is-running' : ''}`} onClick={() => openWindows.includes(id) && !windows[id].minimized ? minimizeApp(id) : openApp(id)} aria-label={appMeta[id].title}><AppIcon id={id} size={17}/></button>)}
+                  {(['about', 'projects', 'terminal'] as AppId[]).map((id) => <button key={id} className={`taskbar-app${openWindows.includes(id) ? ' is-running' : ''}`} onClick={() => openWindows.includes(id) && !windows[id].minimized ? minimizeApp(id) : openApp(id)} aria-label={appMeta[id].title}><AppIcon id={id} size={17}/></button>)}
                 </div>
                 <div className="taskbar-tray"><Wifi size={15}/><span className="tray-clock"><b>{clock.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true })}</b><small>{clock.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })}</small></span><button className="tray-power" onClick={() => setConfirmShutdown(true)} aria-label="Shut down"><Power size={14}/></button></div>
               </div>
@@ -359,10 +356,6 @@ function EducationContent() {
   return <div className="page-content"><SectionHeading eyebrow="ACADEMIC PROFILE" title="Education" text="My academic path and current qualification."/><div className="education-highlight"><div className="education-icon"><GraduationCap size={26}/></div><div><span className="content-eyebrow">CURRENT PROGRAMME</span><h3>{profile.degree}</h3><p>{profile.university} · {profile.universityLocation}</p><div className="education-tags"><span>{profile.batch}</span><span>{profile.graduation}</span><span>CGPA {profile.cgpa}</span></div></div></div><div className="education-list">{profile.education.map((item, index) => <article key={item.qualification} className="education-row"><div className="education-year">{item.period}</div><div className="education-bullet"><span/></div><div className="education-detail"><span className="content-eyebrow">{index === 0 ? 'UNDERGRADUATE' : 'SCHOOL EDUCATION'}</span><h3>{item.qualification}</h3><b>{item.subject}</b><p>{item.institution}</p><div className="education-result"><span>{item.result}</span><span>{item.status}</span></div></div></article>)}</div></div>;
 }
 
-function ResumeContent() {
-  return <div className="resume-viewer"><div className="resume-toolbar"><div><FileText size={16}/><span>Pritam_Das_Resume.pdf</span></div><a href="/resume/Pritam_Das_Resume.pdf" download><Download size={14}/> Download PDF</a></div><iframe title="Pritam Das resume PDF" src="/resume/Pritam_Das_Resume.pdf#toolbar=0&navpanes=0" /><div className="resume-fallback">PDF preview not visible? <a href="/resume/Pritam_Das_Resume.pdf" target="_blank" rel="noreferrer">Open resume in a new tab</a>.</div></div>;
-}
-
 function ContactContent() {
   const cards = [
     { label: 'Email', value: profile.email, href: `mailto:${profile.email}`, icon: Mail, hint: 'Best for professional enquiries' },
@@ -374,7 +367,7 @@ function ContactContent() {
 }
 
 function CertificatesContent() {
-  return <div className="page-content"><SectionHeading eyebrow="CONTINUOUS LEARNING" title="Certificates & Training" text="Courses, certifications and learning programmes listed in my resume and profile history."/><div className="certificate-list">{profile.certifications.map((item, index) => <article className="certificate-row" key={item.name}><div className="certificate-icon"><Award size={17}/></div><div className="certificate-info"><span className="certificate-type">{item.type} · {item.date}</span><h3>{item.name}</h3><p>{item.issuer}</p></div><div className="certificate-result">{item.result}</div></article>)}</div><div className="certificate-footnote">Certificate scans and verification links have not been attached to this starter package. Add them only after checking the exact credential details.</div></div>;
+  return <div className="page-content"><SectionHeading eyebrow="CONTINUOUS LEARNING" title="Certificates & Training" text="Courses, certifications and learning programmes I have completed or explored."/><div className="certificate-list">{profile.certifications.map((item, index) => <article className="certificate-row" key={item.name}><div className="certificate-icon"><Award size={17}/></div><div className="certificate-info"><span className="certificate-type">{item.type} · {item.date}</span><h3>{item.name}</h3><p>{item.issuer}</p></div><div className="certificate-result">{item.result}</div></article>)}</div><div className="certificate-footnote">Certificate scans and verification links have not been attached to this starter package. Add them only after checking the exact credential details.</div></div>;
 }
 
 export default App;

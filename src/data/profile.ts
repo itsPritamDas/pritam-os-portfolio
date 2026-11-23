@@ -9,7 +9,7 @@ export const profile = {
   batch: '2023–2027',
   graduation: 'Expected 2027',
   cgpa: '7.8 / 10',
-  cgpaNote: 'Reported up to Semester 6 in the latest resume available to me.',
+  cgpaNote: 'Reported up to Semester 6.',
   email: 'iampritamdas04@gmail.com',
   phone: '+91 98832 14531',
   linkedin: 'https://www.linkedin.com/in/pritam-das-0a52722b0/',
@@ -34,7 +34,7 @@ export const profile = {
       subject: 'Computer Science & Engineering',
       institution: 'JIS University, Kolkata, West Bengal',
       period: '2023 – 2027',
-      result: 'CGPA: 7.8 / 10 (up to Semester 6, per latest resume)',
+      result: 'CGPA: 7.8 / 10 (up to Semester 6)',
       status: 'Pursuing · Expected 2027',
     },
     {
@@ -187,4 +187,4 @@ export const profile = {
   languages: ['Bengali', 'English', 'Hindi'],
 };
 
-export type AppId = 'about' | 'projects' | 'skills' | 'experience' | 'education' | 'terminal' | 'resume' | 'contact' | 'certificates';
+export type AppId = 'about' | 'projects' | 'skills' | 'experience' | 'education' | 'terminal' | 'contact' | 'certificates';

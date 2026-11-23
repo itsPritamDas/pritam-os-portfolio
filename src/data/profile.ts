@@ -55,23 +55,53 @@ export const profile = {
     },
   ],
   experience: [
-    {
-      role: 'Full Stack Web Development Intern',
-      organization: 'Unified Mentor Pvt. Ltd.',
-      period: 'July 2025 – October 2025',
-      location: 'Remote, India',
-      bullets: [
-        'Analysed functional requirements and translated them into technical tasks and responsive web modules using HTML, CSS and JavaScript.',
-        'Worked with application-delivery security practices, including firewall rules and encryption strategies.',
-        'Collaborated remotely to deliver assigned development work within timelines.',
-      ],
-    },
-  ],
+  {
+    role: 'Full Stack Web Development Intern',
+    organization: 'Unified Mentor Pvt. Ltd.',
+    period: 'July 2025 – October 2025',
+    location: 'Remote, India',
+    bullets: [
+      'Analysed functional requirements and translated them into technical tasks and responsive web modules using HTML, CSS and JavaScript.',
+      'Worked with application-delivery security practices, including firewall rules and encryption strategies.',
+      'Collaborated remotely to deliver assigned development work within timelines.',
+    ],
+  },
+  {
+    role: 'AI/ML Virtual Intern',
+    organization: 'EduSkills Foundation',
+    period: 'June 2026 – August 2026',
+    location: 'Remote, India',
+    bullets: [
+      'Completed an 8-week AI-ML Virtual Internship under the AICTE Virtual Internship Program, supported by the Google for Developers India Edu Program.',
+      'Worked on AI/ML learning modules and practical assignments.',
+    ],
+  },
+  {
+    role: 'AI Deployment & Automation Intern',
+    organization: 'EduSkills Foundation',
+    period: 'January 2026 – March 2026',
+    location: 'Remote, India',
+    bullets: [
+      'Completed a 10-week AICTE–EduSkills Virtual Internship Program focused on AI Deployment and Automation.',
+      'Explored LangChain, LlamaIndex, AI-powered automation workflows and cloud deployment basics.',
+    ],
+  },
+  {
+    role: 'Networking Virtual Intern',
+    organization: 'EduSkills Foundation',
+    period: 'October 2025 – December 2025',
+    location: 'Remote, India',
+    bullets: [
+      'Completed a 10-week Networking Virtual Internship supported by AICTE and Zscaler.',
+      'Gained exposure to computer networking and cybersecurity fundamentals.',
+    ],
+  },
+],
   leadership: [
     {
       role: 'General Secretary',
       organization: 'ISTE JISU Student Chapter',
-      period: '2025 – Present (confirm current tenure before publishing)',
+      period: 'Aug 2026 – Present ',
       detail: 'Student leadership and chapter coordination.',
     },
     {

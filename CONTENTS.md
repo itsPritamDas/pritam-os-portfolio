@@ -12,3 +12,6 @@
 - `start-mac-linux.sh` — macOS/Linux start helper
 
 Dependencies are installed locally with `npm install`; `node_modules` is intentionally not bundled.
+
+- `public/pritam-os-preview.png` — 1200 × 627 social preview image for LinkedIn and other platforms
+- `LINKEDIN_PREVIEW_FIX.md` — metadata fix, rebuild, deployment and verification instructions

@@ -146,6 +146,17 @@ I enjoy building interactive web applications, exploring modern technologies, an
 
 ## 📜 Copyright & Ownership
 
+
+This is a starter implementation. It does not include private API keys, server-side authentication, visitor tracking or an actual operating system.
+
+## LinkedIn / social link previews
+
+The root `index.html` contains Open Graph metadata for LinkedIn and other social platforms. The branded preview image is stored at `public/pritam-os-preview.png` and is copied into `dist/` during `npm run build`.
+
+See [LINKEDIN_PREVIEW_FIX.md](LINKEDIN_PREVIEW_FIX.md) for the rebuild, Cloudflare redeploy and Post Inspector verification steps.
+
+---
+
 **© 2026 Pritam Das. All Rights Reserved.**
 
 Pritam OS is an original personal portfolio project designed, developed, and maintained by Pritam Das.
